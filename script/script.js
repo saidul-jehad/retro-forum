@@ -16,16 +16,21 @@ const loadData = (searchCategory) => {
             const posts = data.posts
             // console.log(posts);
 
-            postContainer.innerHTML = ''
+            // postContainer.innerHTML = ''
             for (const post of posts) {
                 // console.log(post);
                 const cards = document.createElement('div')
                 cards.innerHTML = `
                 <!-- first card -->
-                <div class="bg-[#F3F3F5] flex gap-6 lg:p-10 p-3 rounded-3xl  ">
+                <div class="bg-[#F3F3F5] flex gap-2 lg:gap-6 lg:p-10 p-3 rounded-3xl  ">
                     <!-- image -->
-                    <div class="w-[72px] h-[72px]">
+                    <div class="w-[72px] h-[72px] relative">
                         <img class="rounded-2xl" src="${post.image}" alt="">
+
+                        <div class=" p-[2px] rounded-full bg-white absolute -top-[6px] -right-[6px]">
+                            <div id="active-color" class=" ${post.isActive? "bg-green-500" :"bg-red-500"} w-4 h-4 rounded-full">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="flex-1">
@@ -49,7 +54,7 @@ const loadData = (searchCategory) => {
                                 <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>${post.posted_time} </span> min</p>
                             </div>
 
-                            <button class ="count-btn mt-3" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
+                            <button class ="count-btn mt-3" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular lg:fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
                         </div>
                     </div>
                 </div>
