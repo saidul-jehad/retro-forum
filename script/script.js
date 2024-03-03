@@ -57,15 +57,50 @@ const loadData = () => {
 
 // latest post
 const loadData2 = () =>{
+    const postContainer2 = document.getElementById('post-container2')
     fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts")
     .then((data) => data.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+        const posts = data;
+        posts.forEach(post => {
+            const div = document.createElement('div')
+            div.innerHTML = `
+            <!-- first card -->
+            <div class="card card-compact  p-4 bg-base-100 shadow-xl">
+                <!-- cover image -->
+                <figure><img class="rounded-2xl" src="${post.cover_image} "
+                        alt="Shoes" /></figure>
+
+                <div class="mt-6 space-y-3">
+                    <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>${post.author.posted_date}</span>
+                    </h2>
+                    <p class="font-extrabold text-lg">${post.title}</p>
+                    <p class="text-[16px]">${post.description} </p>
+
+                    <div class="profile flex gap-4 my-4 ">
+                        <div class="w-11 h-11 rounded-full">
+                            <img class="rounded-full" src="${post.profile_image}" alt="">
+                        </div>
+                        <div>
+                            <p class="font-bold text-[16px]">${post.author.name} </p>
+                            <p class="text-[14px]">${post.author.designation}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `
+            postContainer2.appendChild(div)
+            console.log(post);
+        });
+        
+    })
 }
 
 
 
 
 loadData()
+loadData2()
 
 
 // count add 
