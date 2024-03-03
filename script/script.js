@@ -8,7 +8,7 @@ const loadData = () => {
         .then((data) => data.json())
         .then((data) => {
             const posts = data.posts
-            // console.log(posts);
+            console.log(posts);
 
             for (const post of posts) {
                 // console.log(post);
@@ -42,7 +42,7 @@ const loadData = () => {
                                 <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>${post.posted_time} </span> min</p>
                             </div>
 
-                            <button class ="count-btn" onclick="countHandler(${this.clas})">  <img src="./images/Group.png" alt=""></button>
+                            <button class ="count-btn" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ const loadData2 = () =>{
                         alt="Shoes" /></figure>
 
                 <div class="mt-6 space-y-3">
-                    <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>${post.author.posted_date}</span>
+                    <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>${post.author.posted_date || 'No publish date'}</span>
                     </h2>
                     <p class="font-extrabold text-lg">${post.title}</p>
                     <p class="text-[16px]">${post.description} </p>
@@ -83,21 +83,25 @@ const loadData2 = () =>{
                         </div>
                         <div>
                             <p class="font-bold text-[16px]">${post.author.name} </p>
-                            <p class="text-[14px]">${post.author.designation}</p>
+                            <p class="text-[14px]">${post.author.designation || 'Unknown'}</p>
                         </div>
                     </div>
                 </div>
             </div>
             `
             postContainer2.appendChild(div)
-            console.log(post);
+            // console.log(post);
         });
         
     })
 }
 
 
-
+const allBtn = document.getElementsByClassName('count-btn')
+// console.log(allBtn);
+// for(const btn of allBtn){
+//     console.log(btn);
+// }
 
 loadData()
 loadData2()
