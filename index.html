@@ -35,27 +35,12 @@
                             </svg>
                         </div>
                         <ul tabindex="0"
-                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            <li>
-                                <div class="tooltip tooltip-bottom rounded-full bg-[#12132D08]" data-tip="Home">
-                                    <i class="fa-solid fa-2x fa-house"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tooltip tooltip-bottom rounded-full bg-[#12132D08]" data-tip="Edit">
-                                    <i class="fa-solid fa-2x fa-pen"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tooltip tooltip-bottom rounded-full bg-[#12132D08]" data-tip="Add">
-                                    <i class="fa-solid fa-2x fa-user-plus"></i>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="tooltip tooltip-bottom rounded-full bg-[#12132D08]" data-tip="Flug">
-                                    <i class="fa-solid fa-2x fa-flag"></i>
-                                </div>
-                            </li>
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow cursor-pointer bg-base-100 rounded-box w-44 space-y-2">
+
+                            <li class="hover:bg-gray-300 rounded-xl p-2">Home</li>
+                            <li class="hover:bg-gray-300 rounded-xl p-2"> Edit</li>
+                            <li class="hover:bg-gray-300 rounded-xl p-2">Add</li>
+                            <li class="hover:bg-gray-300 rounded-xl p-2">Flug</li>
                         </ul>
                     </div>
                     <a class="btn btn-ghost text-xl"><img src="./images/logo.png" alt="" srcset=""></a>
@@ -103,9 +88,13 @@
                     <p class="py-6 text-[20px] font-medium text-white">Share your favorite opinion and win and wp
                         forum coffee mug!</p>
 
-                    <button class=" bg-white rounded-3xl px-3 "><input type="text" id="search-input" placeholder="Search here anything"
-                            class="  max-w-xs focus:border-none focus:outline-none input bg-white" /> <span
-                            class="bg-[#797DFC] px-10 rounded-3xl btn" onclick="searchHandler()">Search</span></button>
+                    <button class=" bg-white rounded-3xl px-3 ">
+                        <input type="text" id="search-input" placeholder="Search here anything"
+                            class="focus:border-none w-48 lg:w-56 focus:outline-none input bg-white" />
+                        <span class="bg-[#797DFC] px-8 rounded-3xl btn" onclick="searchHandler()">
+                            Search
+                        </span>
+                    </button>
                 </div>
                 <!--left -->
                 <div class="flex-1 bg-white p-14 text-2xl font-medium rounded-3xl">
@@ -287,6 +276,7 @@
                             d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
                         </path>
                     </svg></a>
+                <a><i class="fa-brands fa-2x fa-github"></i></a>
             </div>
         </nav>
 

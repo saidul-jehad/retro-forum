@@ -16,7 +16,7 @@ const loadData = (searchCategory) => {
             const posts = data.posts
             // console.log(posts);
 
-            // postContainer.innerHTML = ''
+            postContainer.innerHTML = ''
             for (const post of posts) {
                 // console.log(post);
                 const cards = document.createElement('div')
