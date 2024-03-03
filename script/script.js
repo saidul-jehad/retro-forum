@@ -1,15 +1,22 @@
 
 
 // all post data
-const loadData = () => {
+const loadData = (searchCategory) => {
     const postContainer = document.getElementById('post-container')
-    const url = "https://openapi.programming-hero.com/api/retro-forum/posts"
+    console.log(searchCategory);
+    let url = ``;
+    if(searchCategory === true){
+        url = "https://openapi.programming-hero.com/api/retro-forum/posts"
+    }else{
+        url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchCategory}`
+    }
     fetch(url)
         .then((data) => data.json())
         .then((data) => {
             const posts = data.posts
-            console.log(posts);
+            // console.log(posts);
 
+            postContainer.innerHTML = ''
             for (const post of posts) {
                 // console.log(post);
                 const cards = document.createElement('div')
@@ -42,7 +49,7 @@ const loadData = () => {
                                 <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>${post.posted_time} </span> min</p>
                             </div>
 
-                            <button class ="count-btn" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
+                            <button class ="count-btn mt-3" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
                         </div>
                     </div>
                 </div>
@@ -56,15 +63,15 @@ const loadData = () => {
 
 
 // latest post
-const loadData2 = () =>{
+const loadData2 = () => {
     const postContainer2 = document.getElementById('post-container2')
     fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts")
-    .then((data) => data.json())
-    .then((data) => {
-        const posts = data;
-        posts.forEach(post => {
-            const div = document.createElement('div')
-            div.innerHTML = `
+        .then((data) => data.json())
+        .then((data) => {
+            const posts = data;
+            posts.forEach(post => {
+                const div = document.createElement('div')
+                div.innerHTML = `
             <!-- first card -->
             <div class="card card-compact  p-4 bg-base-100 shadow-xl">
                 <!-- cover image -->
@@ -89,13 +96,12 @@ const loadData2 = () =>{
                 </div>
             </div>
             `
-            postContainer2.appendChild(div)
-            // console.log(post);
-        });
-        
-    })
-}
+                postContainer2.appendChild(div)
+                // console.log(post);
+            });
 
+        })
+}
 
 const allBtn = document.getElementsByClassName('count-btn')
 // console.log(allBtn);
@@ -103,8 +109,14 @@ const allBtn = document.getElementsByClassName('count-btn')
 //     console.log(btn);
 // }
 
-loadData()
 loadData2()
 
 
-// count add 
+
+
+const searchHandler = () => {
+    const searchInput = document.getElementById('search-input')
+    const searchInputText = searchInput.value
+    loadData(searchInputText)
+}
+loadData(true);
