@@ -10,6 +10,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- font awesome cdn-->
+    <script src="https://kit.fontawesome.com/6ee2d4b526.js" crossorigin="anonymous"></script>
+
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style/style.css">
@@ -133,7 +136,7 @@
     <main class="container mx-auto my-24">
         <!-- lets discuss section start -->
         <section class="w-[98%] mx-auto">
-            <div class="text-center mx-auto lg:w-[690px] space-y-4">
+            <div class="text-center mx-auto lg:w-[690px] space-y-4 mb-8">
                 <h2 class="text-4xl font-extrabold">Let’s Discuss</h2>
                 <p class="text-lg">Yes, you can run unit tests and view the results directly within the app. The
                     integrated testing features allow for a streamlined .</p>
@@ -143,7 +146,7 @@
             <div class="flex flex-col lg:flex-row gap-6">
                 <!-- full comment left-->
                 <div id="post-container" class="lg:w-[70%] space-y-5">
-                    
+
                     <!-- first card -->
                     <!-- <div class="bg-[#F3F3F5] flex gap-6 lg:p-10 p-3 rounded-3xl  ">
                         
@@ -180,20 +183,22 @@
                 </div>
 
                 <!-- comment details right-->
-                <div class="bg-[#F3F3F5] rounded-2xl lg:w-[28%] p-6">
+                <div class="bg-[#F3F3F5] rounded-2xl lg:w-[28%] p-6 space-y-5">
                     <div class="flex justify-between w-full">
                         <h3>Title</h3>
                         <p>Mark as read (<span>0</span>)</p>
+                    </div>
+
+                    <div class="text-[14px] flex justify-between bg-white rounded-xl p-3 ">
+                        <h3 class=" font-medium w-[70%]">10 Kids Unaware of Their Costume</h3>
+                        <p class="flex items-center justify-center gap-2 w-[20%]"><img src="./images/view.png" alt="">
+                            <span>32565 </span>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- lets discuss section end -->
-
-
-
-
-
 
         <!-- banner 2 start here -->
         <section class="hidden">
@@ -210,6 +215,68 @@
             </div>
         </section>
         <!-- banner 2 end here -->
+
+        <!-- Latest Posts starts here -->
+        <section class="w-[98%] mx-auto">
+            <div class="text-center mx-auto lg:w-[690px] space-y-4 my-8">
+                <h2 class="text-4xl font-extrabold">Latest Posts</h2>
+                <p class="text-lg">Yes, you can run unit tests and view the results directly within the app. The
+                    integrated testing features allow for a streamlined .</p>
+            </div>
+
+            <!-- cards container -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 ">
+                <!-- first card -->
+                <div class="card card-compact  p-4 bg-base-100 shadow-xl">
+                    <!-- cover image -->
+                    <figure><img class="rounded-2xl" src="https://i.ibb.co/hC2CtK2/pexels-monstera-production-7412067.jpg"
+                            alt="Shoes" /></figure>
+
+                    <div class="mt-6 space-y-3">
+                        <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>29 January 2024</span>
+                        </h2>
+                        <p class="font-extrabold text-lg">If a dog chews shoes whose shoes does he choose?</p>
+                        <p class="text-[16px]">Leading gaming expert with a wealth of knowledge and passion for all
+                            things gaming</p>
+
+                        <div class="profile flex gap-4 my-4 ">
+                            <div class="w-11 h-11 rounded-full">
+                                <img class="rounded-full" src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg" alt="">
+                            </div>
+                            <div>
+                                <p class="font-bold text-[16px]">Jerome Bell</p>
+                                <p class="text-[14px]">ROR Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- first card -->
+                <div class="card card-compact  p-4 bg-base-100 shadow-xl">
+                    <!-- cover image -->
+                    <figure><img class="rounded-2xl" src="https://i.ibb.co/hC2CtK2/pexels-monstera-production-7412067.jpg"
+                            alt="Shoes" /></figure>
+
+                    <div class="mt-6 space-y-3">
+                        <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>29 January 2024</span>
+                        </h2>
+                        <p class="font-extrabold text-lg">If a dog chews shoes whose shoes does he choose?</p>
+                        <p class="text-[16px]">Leading gaming expert with a wealth of knowledge and passion for all
+                            things gaming</p>
+
+                        <div class="profile flex gap-4 my-4 ">
+                            <div class="w-11 h-11 rounded-full">
+                                <img class="rounded-full" src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg" alt="">
+                            </div>
+                            <div>
+                                <p class="font-bold text-[16px]">Jerome Bell</p>
+                                <p class="text-[14px]">ROR Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Latest Posts end here -->
     </main>
 
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">

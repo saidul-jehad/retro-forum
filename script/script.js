@@ -8,10 +8,10 @@ const loadData = () => {
         .then((data) => data.json())
         .then((data) => {
             const posts = data.posts
-            console.log(posts);
+            // console.log(posts);
 
-            for(const post of posts){
-                console.log(post);
+            for (const post of posts) {
+                // console.log(post);
                 const cards = document.createElement('div')
                 cards.innerHTML = `
                 <!-- first card -->
@@ -35,14 +35,14 @@ const loadData = () => {
                         </div>
 
                         <!-- comment, view and post time -->
-                        <div class="flex justify-between ">
+                        <div class="flex justify-between items-center">
                             <div class="flex gap-4 mt-4">
                                 <p class="flex items-center justify-center gap-2"><img src="./images/comment.png" alt=""> <span>${post.comment_count} </span></p>
                                 <p class="flex items-center justify-center gap-2"><img src="./images/view.png" alt=""> <span>${post.view_count} </span></p>
                                 <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>${post.posted_time} </span> min</p>
                             </div>
 
-                            <button><img src="./images/Group.png" alt=""></button>
+                            <button class ="count-btn" onclick="countHandler(${this.clas})">  <img src="./images/Group.png" alt=""></button>
                         </div>
                     </div>
                 </div>
@@ -53,4 +53,19 @@ const loadData = () => {
         })
 }
 
+
+
+// latest post
+const loadData2 = () =>{
+    fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts")
+    .then((data) => data.json())
+    .then((data) => console.log(data))
+}
+
+
+
+
 loadData()
+
+
+// count add 
