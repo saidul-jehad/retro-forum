@@ -116,12 +116,30 @@ const allBtn = document.getElementsByClassName('count-btn')
 
 loadData2()
 
-
+// 
+const loadDataSub = () =>{
+    loadData(true);
+    // console.log("log");
+    document.getElementById('loader-container').classList.add('hidden')
+    const container = document.getElementById('details-show-container')
+    container.classList.remove("hidden")
+}
 
 
 const searchHandler = () => {
+    // loadData()
+    document.getElementById('loader-container').classList.remove('hidden')
+    const postContainer = document.getElementById('post-container')
+
+    postContainer.innerHTML = ''
     const searchInput = document.getElementById('search-input')
     const searchInputText = searchInput.value
-    loadData(searchInputText)
+    const searchHandler2 = () =>{
+    document.getElementById('loader-container').classList.add('hidden')
+        loadData(searchInputText)
+    }
+    setTimeout(searchHandler2, 2000)
 }
-loadData(true);
+
+setTimeout(loadDataSub, 2000)
+// loadData(true)
