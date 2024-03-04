@@ -5,9 +5,9 @@ const loadData = (searchCategory) => {
     const postContainer = document.getElementById('post-container')
     console.log(searchCategory);
     let url = ``;
-    if(searchCategory === true){
+    if (searchCategory === true) {
         url = "https://openapi.programming-hero.com/api/retro-forum/posts"
-    }else{
+    } else {
         url = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchCategory}`
     }
     fetch(url)
@@ -28,7 +28,7 @@ const loadData = (searchCategory) => {
                         <img class="rounded-2xl" src="${post.image}" alt="">
 
                         <div class=" p-[2px] rounded-full bg-white absolute -top-[6px] -right-[6px]">
-                            <div id="active-color" class=" ${post.isActive? "bg-green-500" :"bg-red-500"} w-4 h-4 rounded-full">
+                            <div id="active-color" class=" ${post.isActive ? "bg-green-500" : "bg-red-500"} w-4 h-4 rounded-full">
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ const loadData = (searchCategory) => {
                                 <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>${post.posted_time} </span> min</p>
                             </div>
 
-                            <button class ="count-btn mt-3" onclick="countHandler()">  <i class=" rounded-3xl p-1 fa-regular lg:fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
+                            <button class ="count-btn mt-3"  onclick="btnHandle('${post.title}', ${post.view_count})">  <i class=" rounded-3xl p-1 fa-regular lg:fa-2x bg-[#10B981] text-white fa-envelope"></i></button>
                         </div>
                     </div>
                 </div>
@@ -108,16 +108,10 @@ const loadData2 = () => {
         })
 }
 
-const allBtn = document.getElementsByClassName('count-btn')
-// console.log(allBtn);
-// for(const btn of allBtn){
-//     console.log(btn);
-// }
-
 loadData2()
 
 // 
-const loadDataSub = () =>{
+const loadDataSub = () => {
     loadData(true);
     // console.log("log");
     document.getElementById('loader-container').classList.add('hidden')
@@ -134,12 +128,35 @@ const searchHandler = () => {
     postContainer.innerHTML = ''
     const searchInput = document.getElementById('search-input')
     const searchInputText = searchInput.value
-    const searchHandler2 = () =>{
-    document.getElementById('loader-container').classList.add('hidden')
+    const searchHandler2 = () => {
+        document.getElementById('loader-container').classList.add('hidden')
         loadData(searchInputText)
     }
     setTimeout(searchHandler2, 2000)
 }
 
 setTimeout(loadDataSub, 2000)
-// loadData(true)
+
+
+// count
+let count = 0;
+const btnHandle = (title, viewCount) => {
+    count++
+    const markCount = document.getElementById('mark-count')
+    markCount.innerText = count;
+
+    const detailsContainer = document.getElementById('details-show-container');
+    // div create
+    const div = document.createElement('div');
+    div.innerHTML = `
+        <div class="text-[14px] flex justify-between bg-white rounded-xl p-3 ">
+                <h3 class=" font-medium w-[70%]">${title}</h3>
+                <p class="flex items-center justify-center gap-2 w-[20%]"><img src="./images/view.png" alt="">
+                <span>${viewCount} </span>
+                </p>
+        </div>
+    `
+    detailsContainer.appendChild(div)
+}
+
+
