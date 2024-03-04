@@ -3,7 +3,7 @@
 // all post data
 const loadData = (searchCategory) => {
     const postContainer = document.getElementById('post-container')
-    console.log(searchCategory);
+    // console.log(searchCategory);
     let url = ``;
     if (searchCategory === true) {
         url = "https://openapi.programming-hero.com/api/retro-forum/posts"
@@ -108,7 +108,12 @@ const loadData2 = () => {
         })
 }
 
-loadData2()
+const loadDataSub2 = () =>{
+    loadData2()
+    document.getElementById('loader-container2').classList.add('hidden')
+}
+
+
 
 // 
 const loadDataSub = () => {
@@ -136,6 +141,7 @@ const searchHandler = () => {
 }
 
 setTimeout(loadDataSub, 2000)
+setTimeout(loadDataSub2, 2000)
 
 
 // count
@@ -149,9 +155,9 @@ const btnHandle = (title, viewCount) => {
     // div create
     const div = document.createElement('div');
     div.innerHTML = `
-        <div class="text-[14px] flex justify-between bg-white rounded-xl p-3 ">
+        <div class="text-[14px] flex justify-between bg-white rounded-xl p-3 drop-shadow-md">
                 <h3 class=" font-medium w-[70%]">${title}</h3>
-                <p class="flex items-center justify-center gap-2 w-[20%]"><img src="./images/view.png" alt="">
+                <p class="flex items-center justify-center gap-1 w-[20%]"><img src="./images/view.png" alt="">
                 <span>${viewCount} </span>
                 </p>
         </div>

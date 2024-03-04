@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retro-Forum</title>
+    <title>Vintage-Forum</title>
 
     <!-- Daisy ui and tailwind -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -43,7 +43,7 @@
                             <li class="hover:bg-gray-300 rounded-xl p-2">Flug</li>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost text-xl"><img src="./images/logo.png" alt="" srcset=""></a>
+                    <h2 class="lg:text-4xl text-3xl font-bold lg:font-extrabold">Vintage</h2>
                 </div>
 
                 <div class="navbar-end">
@@ -84,7 +84,7 @@
                 <!-- right -->
                 <div class="lg:w-1/2">
                     <h2 class="lg:font-extrabold font-semibold text-4xl lg:text-6xl text-white">Welcome to the <span
-                            class="text-[#797DFC]">ReTro</span> Forum</h2>
+                            class="text-[#797DFC]">Vintage</span> Forum</h2>
                     <p class="py-6 text-[20px] font-medium text-white">Share your favorite opinion and win and wp
                         forum coffee mug!</p>
 
@@ -132,52 +132,14 @@
                     integrated testing features allow for a streamlined .</p>
             </div>
 
-            <div id="loader-container" class="h-full w-full flex justify-center items-center"><span class="loading loading-bars loading-lg"></span></div>
+            <div id="loader-container" class="h-full w-full flex justify-center items-center"><span
+                    class="loading loading-bars loading-lg"></span></div>
 
             <!-- comment section -->
             <div id="comment-container" class="flex flex-col lg:flex-row gap-6 ">
                 <!-- full comment left-->
                 <div id="post-container" class="lg:w-[70%] space-y-5">
-
-                    <!-- first card -->
-                    <!-- <div class="bg-[#F3F3F5] flex gap-6 lg:p-10 p-3 rounded-3xl  ">
-                        
-                        <div class="w-[72px] h-[72px] relative">
-                            <img class="rounded-2xl" src="https://i.ibb.co/0QRxkd5/pexels-jan-kop-iva-3525908.jpg" alt="">
-
-                            <div class=" p-[2px] rounded-full bg-white absolute -top-[6px] -right-[6px]">
-                                <div id="active-color" class="bg-green-500 w-4 h-4 rounded-full">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="flex-1">
-                            
-                            <div class="text-[14px] font-medium flex gap-4">
-                                <p># <span> Coding</span></p>
-                                <p>Author : <span>Safia Chowdhury</span></p>
-                                
-                            </div>
-
-           
-                            <div class="space-y-3 mt-3 border-b-2 border-dashed pb-3">
-                                <h2 class="text-[20px] font-bold">10 Kids Unaware of Their Costume</h2>
-                                <p class="text-[16px]">Take your JavaScript skills to the next level with advanced techniques and tips!"</p>
-                            </div>
-
-                     
-                            <div class="flex justify-between ">
-                                <div class="flex gap-4 mt-4">
-                                    <p class="flex items-center justify-center gap-2"><img src="./images/comment.png" alt=""> <span>501</span></p>
-                                    <p class="flex items-center justify-center gap-2"><img src="./images/view.png" alt=""> <span>501</span></p>
-                                    <p class="flex items-center justify-center gap-2"><img src="./images/time2.png" alt=""> <span>501</span></p>
-                                </div>
-
-                                <button><img src="./images/Group.png" alt=""></button>
-                            </div>
-                        </div>
-                    </div> -->
-
+                    <!-- api data-->
                 </div>
 
                 <!-- comment details right-->
@@ -186,7 +148,7 @@
                         <h3>Title</h3>
                         <p>Mark as read (<span id="mark-count">0</span>)</p>
                     </div>
-                </div>  
+                </div>
             </div>
         </section>
         <!-- lets discuss section end -->
@@ -215,32 +177,12 @@
                     integrated testing features allow for a streamlined .</p>
             </div>
 
+            <div id="loader-container2" class="h-full w-full flex justify-center items-center"><span
+                class="loading loading-bars loading-lg"></span></div>
+
             <!-- cards container -->
             <div id="post-container2" class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 ">
-                <!-- first card -->
-                <!-- <div class="card card-compact  p-4 bg-base-100 shadow-xl">
-                   
-                    <figure><img class="rounded-2xl" src="https://i.ibb.co/hC2CtK2/pexels-monstera-production-7412067.jpg"
-                            alt="Shoes" /></figure>
-
-                    <div class="mt-6 space-y-3">
-                        <h2 class=""><span><i class="fa-solid fa-calendar-days"></i></span> <span>29 January 2024</span>
-                        </h2>
-                        <p class="font-extrabold text-lg">If a dog chews shoes whose shoes does he choose?</p>
-                        <p class="text-[16px]">Leading gaming expert with a wealth of knowledge and passion for all
-                            things gaming</p>
-
-                        <div class="profile flex gap-4 my-4 ">
-                            <div class="w-11 h-11 rounded-full">
-                                <img class="rounded-full" src="https://i.ibb.co/z8zx95w/pexels-davide-de-giovanni-1649675.jpg" alt="">
-                            </div>
-                            <div>
-                                <p class="font-bold text-[16px]">Jerome Bell</p>
-                                <p class="text-[14px]">ROR Developer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <!-- api data -->
             </div>
         </section>
         <!-- Latest Posts end here -->
@@ -248,7 +190,7 @@
 
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <nav class="space-y-4">
-            <h2 class="text-4xl font-extrabold">Retro</h2>
+            <h2 class="text-4xl font-extrabold">Vintage</h2>
             <p class="text-[16px] lg:w-[600px]">Contrary to popular belief, Lorem Ipsum is not simply random text. It
                 has roots in a piece of classical Latin literature from 45 BC</p>
         </nav>
